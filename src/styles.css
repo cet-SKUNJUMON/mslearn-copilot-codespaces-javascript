@@ -119,7 +119,22 @@ a:hover {
   text-align: center;
 }
 
+@keyframes socialPop {
+  0%   { transform: scale(1) rotate(0deg); filter: grayscale(0%); }
+  30%  { transform: scale(1.4) rotate(-10deg); }
+  60%  { transform: scale(1.3) rotate(8deg); filter: grayscale(0%) drop-shadow(0 0 8px #4e567e); }
+  100% { transform: scale(1) rotate(0deg); filter: grayscale(0%); }
+}
+
 img.socialIcon {
   height: 30px;
   width: 30px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(30%);
+}
+
+img.socialIcon:hover {
+  animation: socialPop 0.5s ease forwards;
+  filter: drop-shadow(0 0 6px #4e567e);
+  cursor: pointer;
 }
